@@ -167,16 +167,33 @@ header nav ul li a:hover::after {
 .modal-content button:hover {
     background-color: #555;
 }
+/* Footer */
 footer {
-    background-color: #000;
+    background: #333;
     color: #fff;
     text-align: center;
     padding: 20px;
     margin-top: auto;
+    border-top: 2px solid #ffcc00; /* Add a top border for some contrast */
 }
 
+footer p {
+    margin: 0;
+    font-size: 1rem; /* Adjust font size for better readability */
+}
 
-/* Animation สำหรับการแสดง Modal */
+footer a {
+    color: #ffcc00; /* Link color to match the theme */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff9900; /* Slightly darker shade on hover */
+}
+
+/* Animation สำหรับ header */
 @keyframes rainbowAnimation {
     0% {
         background-position: 0% 0%;

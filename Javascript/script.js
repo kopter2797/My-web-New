@@ -1,50 +1,53 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Banner slider
-    const slides = document.querySelectorAll(".banner-slider img");
-    const totalSlides = slides.length;
-    let currentSlide = 0;
+// script.js
 
-    function showSlide(index) {
-        const offset = -index * 100;
-        document.querySelector(".banner-slider").style.transform = `translateX(${offset}%)`;
+// Banner Slider
+let currentIndex = 0;
+const slides = document.querySelectorAll('.banner-slider img');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+}
+
+// Initialize the first slide
+showSlide(currentIndex);
+
+document.getElementById('nextBtn')?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+});
+
+document.getElementById('prevBtn')?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentIndex);
+});
+
+// Product Details Functionality
+document.querySelectorAll('.show-details-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const productDetails = btn.nextElementSibling;
+        if (productDetails) {
+            productDetails.style.display = 'block';
+            productDetails.style.position = 'fixed';
+            productDetails.style.top = '50%';
+            productDetails.style.left = '50%';
+            productDetails.style.transform = 'translate(-50%, -50%)';
+            productDetails.style.zIndex = '1000';
+        }
+    });
+});
+
+document.querySelectorAll('.close-details-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.closest('.product-details').style.display = 'none';
+    });
+});
+
+// Close details view when clicking outside of it
+window.addEventListener('click', (e) => {
+    if (e.target.matches('.product-details')) {
+        e.target.style.display = 'none';
     }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        showSlide(currentSlide);
-    }
-
-    document.getElementById("nextBtn").addEventListener("click", nextSlide);
-    document.getElementById("prevBtn").addEventListener("click", prevSlide);
-
-    // Product details
-    document.querySelectorAll(".show-details-btn").forEach(button => {
-        button.addEventListener("click", function() {
-            this.nextElementSibling.style.display = "flex";
-        });
-    });
-
-    document.querySelectorAll(".close-details-btn").forEach(button => {
-        button.addEventListener("click", function() {
-            this.parentElement.style.display = "none";
-        });
-    });
-
-    // Modal welcome message
-    const welcomeBtn = document.getElementById("welcome-btn");
-    const welcomeModal = document.getElementById("welcome-modal");
-    const closeModalBtn = document.getElementById("close-modal");
-
-    welcomeBtn.addEventListener("click", function() {
-        welcomeModal.style.display = "flex";
-    });
-
-    closeModalBtn.addEventListener("click", function() {
-        welcomeModal.style.display = "none";
-    });
 });
