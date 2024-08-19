@@ -1,34 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Addidas Store</title>
-    <link rel="stylesheet" href="Css/contact.css">
-    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adidas Contact</title>
+    <link rel="stylesheet" href="Css/contact.css" />
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png" alt="Adidas Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png"
+          alt="Adidas Logo"
+        />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>
+        We'd love to hear from you! Fill out the form below to get in touch with
+        us.
+      </p>
+      <form action="https://formspree.io/f/mvgpbaye" method="POST">
+        <label>
+          Your Name:
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Subject:
+          <input type="text" name="subject" />
+        </label>
+        <label>
+          Your email:
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Your message:
+          <textarea name="message"></textarea>
+        </label>
+        <!-- your other form fields go here -->
+        <button type="submit">Send</button>
+      </form>
 
+      <div class="contact-info">
+        <h2>Our Contact Information</h2>
+        <p><strong>Address:</strong> 123 Adidas Street, Bangkok, Thailand</p>
+        <p><strong>Phone:</strong> +66 2 123 4567</p>
+        <p><strong>Email:</strong> contact@adidasstore.com</p>
+      </div>
+
+      <div class="map-container">
+        <h2>Find Us Here</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.856225874797!2d100.53095531531496!3d13.736717801560478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ed9e1e5e4f7%3A0x5c3b6ae1a8fd8e7e!2sAdidas!5e0!3m2!1sen!2sth!4v1691234567890!5m2!1sen!2sth"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Adidas. All rights reserved.</p>
-        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+      <p>&copy; 2024 Adidas. All rights reserved.</p>
+      <p>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Service</a>
+      </p>
     </footer>
-    
 
     <script src="Javascript/script.js"></script>
-</body>
+  </body>
 </html>

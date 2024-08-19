@@ -27,7 +27,7 @@ document.getElementById('prevBtn')?.addEventListener('click', () => {
 // Product Details Functionality
 document.querySelectorAll('.show-details-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        const productDetails = btn.nextElementSibling;
+        const productDetails = btn.closest('.product-item').querySelector('.product-details');
         if (productDetails) {
             productDetails.style.display = 'block';
             productDetails.style.position = 'fixed';
