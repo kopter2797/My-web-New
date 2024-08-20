@@ -6,11 +6,13 @@ body {
   font-family: "Arial", sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  box-sizing: border-box;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  padding-top: 60px;
 }
 
 header {
@@ -31,7 +33,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* Added for positioning of menu toggle */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* ตั้งค่า z-index ของ header */
 }
 
 header .logo img {
@@ -42,7 +47,7 @@ header nav ul {
   list-style: none;
   display: flex;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
 }
 
 header nav ul li {
@@ -77,18 +82,102 @@ header nav ul li a:hover::after {
   width: 100%;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #fff;
+.sidebar {
+  height: 100%;
+  width: 250px; /* ความกว้างของ sidebar */
+  position: fixed;
+  top: 0;
+  right: -250px; /* ซ่อน sidebar ไว้ด้านขวา */
+  background: #333; /* สีพื้นหลังของ sidebar */
+  overflow-x: hidden;
+  transition: right 0.3s ease; /* เปลี่ยนแปลงการเคลื่อนไหวเมื่อเปิด sidebar */
+  z-index: 1000; /* ตั้งค่า z-index ของ sidebar ให้ตรงกับ header */
+  padding-top: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8b00ff
+  );
+  background-size: 1400% 1400%;
+  animation: rainbowAnimation 20s ease infinite; /* ใช้การเคลื่อนไหวแบบ rainbow */
 }
+
+.sidebar a {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: background-color 0.3s ease; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+.sidebar .close-sidebar-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px; /* ปรับตำแหน่ง */
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none; /* ซ่อนปุ่มในหน้าจอขนาดใหญ่ */
+  font-size: 2rem;
+  cursor: pointer;
+  position: fixed;
+  top: 5px; /* ตำแหน่งตั้งต้น */
+  right: 20px;
+  border-radius: 15px;
+  z-index: 1100; /* ตั้งค่า z-index ของปุ่มเพื่อให้เหนือกว่า sidebar */
+  border: none;
+  color: #000; /* สีของไอคอน */
+  padding: 5px; /* ขนาดปุ่ม */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8b00ff
+  );
+  background-size: 1400% 1400%;
+  animation: rainbowAnimation 20s ease infinite; /* ใช้การเคลื่อนไหวแบบ rainbow */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* การเปลี่ยนสีพื้นหลังและการขยายขนาด */
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1); /* ขยายขนาดเมื่อโฮเวอร์ */
+}
+
+.menu-toggle:focus {
+  outline: none; /* เอาเส้นขอบออกเมื่อโฟกัส */
+}
+
+/* Show the sidebar when active */
+.sidebar.active {
+  right: 0;
+}
+
 /* Banner */
 .banner {
   position: relative;
   width: 100%;
   height: 350px;
-  /* overflow: hidden; */
 }
 
 .banner-slider {
@@ -147,6 +236,7 @@ header nav ul li a:hover::after {
   padding: 20px;
   text-align: center;
 }
+
 .product-details {
   display: none; /* ซ่อนรายละเอียดตั้งแต่เริ่มต้น */
   position: fixed;
@@ -273,13 +363,6 @@ footer a:hover {
   }
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-}
-
 /* Banner Slider */
 .banner-slider {
   display: flex;
@@ -338,6 +421,7 @@ footer a:hover {
 .banner-nav.right {
   right: 10px;
 }
+
 @media (max-width: 768px) {
   header nav {
     display: none;

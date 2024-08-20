@@ -1,89 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adidas Store</title>
-    <link rel="stylesheet" href="Css/style.css">
-    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
-</head>
-<body>
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png" alt="Adidas Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png"
+          alt="Adidas Logo"
+        />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <div class="banner">
-        <div class="banner-slider">
-            <img src="https://cdn.denimandcloth.com.au/content/uploads/2014/11/18121834/adidas-banner.jpg" class="active" alt="Adidas Banner 1">
-            <img src="https://media.mysport.lv/wysiwyg/Brendu_kategoriju_content_LV/adidas_apavi-baneris.jpg" alt="Adidas Banner 2">
-            <img src="https://xp.sportzvillage.com/wp-content/uploads/2021/02/adidas-case-study-inner-banner.jpg" alt="Adidas Banner 3">
-        </div>
-        <button class="banner-nav left" aria-label="Previous slide" id="prevBtn">❮</button>
-        <button class="banner-nav right" aria-label="Next slide" id="nextBtn">❯</button>
-        <div class="banner-text">
-            <h1>Welcome to the Adidas Shop</h1>
-            <a href="product.html" class="cta-button">Shop Now</a>
-        </div>
+    <div class="sidebar">
+      <button class="close-sidebar-btn">&times;</button>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </div>
-    
+    <button class="menu-toggle">&#9776;</button>
+
+    <div class="banner">
+      <div class="banner-slider">
+        <img
+          src="https://cdn.denimandcloth.com.au/content/uploads/2014/11/18121834/adidas-banner.jpg"
+          class="active"
+          alt="Adidas Banner 1"
+        />
+        <img
+          src="https://media.mysport.lv/wysiwyg/Brendu_kategoriju_content_LV/adidas_apavi-baneris.jpg"
+          alt="Adidas Banner 2"
+        />
+        <img
+          src="https://xp.sportzvillage.com/wp-content/uploads/2021/02/adidas-case-study-inner-banner.jpg"
+          alt="Adidas Banner 3"
+        />
+      </div>
+      <button class="banner-nav left" aria-label="Previous slide" id="prevBtn">
+        ❮
+      </button>
+      <button class="banner-nav right" aria-label="Next slide" id="nextBtn">
+        ❯
+      </button>
+      <div class="banner-text">
+        <h1>Welcome to the Adidas Shop</h1>
+        <a href="product.html" class="cta-button">Shop Now</a>
+      </div>
+    </div>
+
     <section class="products">
-        <h2>Featured Products</h2>
+      <h2>Featured Products</h2>
 
-        <div class="product-grid">
-            <div class="product-item">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg" alt="Adidas Superstar Sneaker">
-                <h3>Adidas Superstar</h3>
-                <p>$100.00</p>
-                <button class="show-details-btn" aria-expanded="false">View Details</button>
-                <div class="product-details">
-                    <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg" alt="Adidas Superstar Sneaker">
-                    <p>Classic and stylish Superstar sneakers from Adidas, perfect for everyday wear.</p>
-                    <button class="close-details-btn" aria-label="Close details">Close</button>
-                </div>
-            </div>
-            
-            <div class="product-item">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4659ee058ba34bd2a5d0af500104c17d_9366/Campus_00s_HQ8708_01_standard.jpg" alt="Adidas Campus Sneaker">
-                <h3>Adidas Campus</h3>
-                <p>$120.00</p>
-                <button class="show-details-btn" aria-expanded="false">View Details</button>
-                <div class="product-details">
-                    <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4659ee058ba34bd2a5d0af500104c17d_9366/Campus_00s_HQ8708_01_standard.jpg" alt="Adidas Campus Sneaker">
-                    <p>Comfortable and fashionable Campus sneakers, great for a casual look.</p>
-                    <button class="close-details-btn" aria-label="Close details">Close</button>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg" alt="Adidas Superstar Sneaker">
-                <h3>Adidas Superstar</h3>
-                <p>$130.00</p>
-                <button class="show-details-btn" aria-expanded="false">View Details</button>
-                <div class="product-details">
-                    <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg" alt="Adidas Superstar Sneaker">
-                    <p>Featuring a sleek design and exceptional comfort, these Superstars are a must-have.</p>
-                    <button class="close-details-btn" aria-label="Close details">Close</button>
-                </div>
-            </div>
+      <div class="product-grid">
+        <div class="product-item">
+          <img
+            src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg"
+            alt="Adidas Superstar Sneaker"
+          />
+          <h3>Adidas Superstar</h3>
+          <p>$100.00</p>
+          <button class="show-details-btn" aria-expanded="false">
+            View Details
+          </button>
+          <div class="product-details">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg"
+              alt="Adidas Superstar Sneaker"
+            />
+            <p>
+              Classic and stylish Superstar sneakers from Adidas, perfect for
+              everyday wear.
+            </p>
+            <button class="close-details-btn" aria-label="Close details">
+              Close
+            </button>
+          </div>
         </div>
+
+        <div class="product-item">
+          <img
+            src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4659ee058ba34bd2a5d0af500104c17d_9366/Campus_00s_HQ8708_01_standard.jpg"
+            alt="Adidas Campus Sneaker"
+          />
+          <h3>Adidas Campus</h3>
+          <p>$120.00</p>
+          <button class="show-details-btn" aria-expanded="false">
+            View Details
+          </button>
+          <div class="product-details">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4659ee058ba34bd2a5d0af500104c17d_9366/Campus_00s_HQ8708_01_standard.jpg"
+              alt="Adidas Campus Sneaker"
+            />
+            <p>
+              Comfortable and fashionable Campus sneakers, great for a casual
+              look.
+            </p>
+            <button class="close-details-btn" aria-label="Close details">
+              Close
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <img
+            src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg"
+            alt="Adidas Superstar Sneaker"
+          />
+          <h3>Adidas Superstar</h3>
+          <p>$130.00</p>
+          <button class="show-details-btn" aria-expanded="false">
+            View Details
+          </button>
+          <div class="product-details">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_EG4959_01_standard.jpg"
+              alt="Adidas Superstar Sneaker"
+            />
+            <p>
+              Featuring a sleek design and exceptional comfort, these Superstars
+              are a must-have.
+            </p>
+            <button class="close-details-btn" aria-label="Close details">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Adidas. All rights reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      <p>&copy; 2024 Adidas. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
-    
 
     <script src="Javascript/script.js"></script>
-</body>
+  </body>
 </html>
